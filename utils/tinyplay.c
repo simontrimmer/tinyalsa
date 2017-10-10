@@ -45,10 +45,7 @@ struct cmd {
 
 void cmd_init(struct cmd *cmd)
 {
-    cmd->filename = NULL;
-    cmd->filetype = NULL;
-    cmd->card = 0;
-    cmd->device = 0;
+    memset(cmd, 0, sizeof(*cmd));
     cmd->flags = PCM_OUT;
     cmd->config.period_size = 1024;
     cmd->config.period_count = 2;
